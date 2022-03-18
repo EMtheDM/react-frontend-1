@@ -13,41 +13,41 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-client
-  .query({
-    query: gql`
-      query GetRates {
-        rates(currency: "USD") {
-          currency
-        }
-      }
-    `,
-  })
-  .then((result) => console.log(result));
+// client
+//   .query({
+//     query: gql`
+//       query GetRates {
+//         rates(currency: "USD") {
+//           currency
+//         }
+//       }
+//     `,
+//   })
+//   .then((result) => console.log(result));
 
-const EXCHANGE_RATES = gql`
-  query GetExchangeRates {
-    rates(currency: "USD") {
-      currency
-      rate
-    }
-  }
-`;
+// const EXCHANGE_RATES = gql`
+//   query GetExchangeRates {
+//     rates(currency: "USD") {
+//       currency
+//       rate
+//     }
+//   }
+// `;
 
-function ExchangeRates() {
-  const { loading, error, data } = useQuery(EXCHANGE_RATES);
+// function ExchangeRates() {
+//   const { loading, error, data } = useQuery(EXCHANGE_RATES);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+//   if (loading) return <p>Loading...</p>;
+//   if (error) return <p>Error :(</p>;
 
-  return data.rates.map(({ currency, rate }) => (
-    <div key={currency}>
-      <p>
-        {currency}: {rate}
-      </p>
-    </div>
-  ));
-}
+//   return data.rates.map(({ currency, rate }) => (
+//     <div key={currency}>
+//       <p>
+//         {currency}: {rate}
+//       </p>
+//     </div>
+//   ));
+// }
 
 export default function App() {
   return (
