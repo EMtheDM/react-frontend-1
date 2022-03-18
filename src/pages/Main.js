@@ -5,6 +5,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import AppBar from "../components/AppBar";
 import About from "../components/About";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import Link from "../components/Link";
 
 const StyledContainer = styled(
   Container,
@@ -47,7 +48,7 @@ export default function Main() {
       <Container>
         <About />
       </Container>
-      <form noValidate autoComplete="off" onSubmit={handleSubmit}>
+      {/* <form noValidate autoComplete="off" onSubmit={handleSubmit}>
         <StyledContainer maxWidth="lg">
           <Grid container spacing={3} display="inline">
             <StyledContainer>
@@ -80,7 +81,21 @@ export default function Main() {
             </StyledContainer>
           </Grid>
         </StyledContainer>
-      </form>
+      </form> */}
+
+      <Container maxWidth="lg">
+        <StyledContainer>
+          <Grid container spacing={3}>
+            <Container>
+              <Grid item>
+                <StyledContainer>
+                  <Link />
+                </StyledContainer>
+              </Grid>
+            </Container>
+          </Grid>
+        </StyledContainer>
+      </Container>
 
       <Container maxWidth="lg">
         <StyledContainer>
